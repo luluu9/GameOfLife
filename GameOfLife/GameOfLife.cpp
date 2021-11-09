@@ -63,6 +63,7 @@ void copy_array(char** matrix, char** duplicate, int x_size, int y_size) {
 			duplicate[i][j] = matrix[i][j];
 }
 
+
 // table:
 // - x (row)
 // - y (column)
@@ -74,8 +75,8 @@ int main()
 	unsigned int time = 0;
 	unsigned const int max_cycles = 100;
 	const unsigned char x_size = 30, y_size = 30;
-	char** table = (char**)malloc(sizeof(char*) * 100);
-	char** temp_table = (char**)malloc(sizeof(char*) * 100);
+	char** table = (char**)malloc(sizeof(char*) * (x_size));
+	char** temp_table = (char**)malloc(sizeof(char*) * (y_size));
 
 	// init table
 	for (int i = 0; i < x_size; i++) {
@@ -160,6 +161,7 @@ int main()
 	for (int i = 0; i < x_size - 1; i++) {
 		free(table[i]);
 	}
+
 	free(table);
 	return 0;
 }
